@@ -5,7 +5,6 @@ const router = express.Router();
 
 router.get('/',function(req,res){
     res.sendFile(path.join(__dirname+'/pages/landing-page.html'));
-    //__dirname : It will resolve to your project folder.
   });
   
   router.get('/add-complaint',function(req,res){
