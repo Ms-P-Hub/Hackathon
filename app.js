@@ -1,19 +1,30 @@
-const express = require("express");
-const bodyParser = require("body-parser");
-const path = require("path");
+const express = require('express');
 const app = express();
+const path = require('path');
+const router = express.Router();
 
-app.use("/static", express.static(__dirname));
-app.use(bodyParser.urlencoded({ extended: true }));
+router.get('/',function(req,res){
+    res.sendFile(path.join(__dirname+'/pages/landing.html'));
+  });
 
-//app.set("view engine", "pug");
-app.set("views", path.join(__dirname, "views"));
+  router.get('/login',function(req,res){
+    res.sendFile(path.join(__dirname+'/pages/add-complaint.html'));
+  });
+  
+  router.get('/add-complaint',function(req,res){
+    res.sendFile(path.join(__dirname+'/pages/add-complaint.html'));
+  });
+  
+  router.get('/user-view-complaint',function(req,res){
+    res.sendFile(path.join(__dirname+'/pages/user-view-complaints.html'));
+  });
 
-/*app.get("/loginUser", (req, res) => {
-  res.send("New Visitor Added!!!");
-});*/
-
-const port = 3000;
-app.listen(port, () =>
-  console.log(`Server running at http://localhost:${port}`)
-);
+  router.get('/user-add-complaint-review',function(req,res){
+    res.sendFile(path.join(__dirname+'/pages/user-add-complaint-review.html'));
+  });
+  
+  //add the router
+  app.use('/', router);
+  app.listen(process.env.port || 3000);
+  
+  console.log('Running at Port 3000');
