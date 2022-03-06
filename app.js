@@ -7,6 +7,10 @@ router.get('/',function(req,res){
     res.sendFile(path.join(__dirname+'/pages/landing.html'));
   });
 
+  router.get('/login',function(req,res){
+    res.sendFile(path.join(__dirname+'/pages/login.html'));
+  });
+
   router.get('/history',function(req,res){
     res.sendFile(path.join(__dirname+'/pages/history.html'));
   });
