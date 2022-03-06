@@ -9,4 +9,11 @@ window.onclick = function (event) {
 };
 function openLogin(type) {
   document.getElementById("id01").style.display = "block";
+  if (type == "a") {
+    //authenticate()
+  } else {
+    \
+    
+    //authenticate()
+  }
 }
