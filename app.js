@@ -7,8 +7,8 @@ router.get('/',function(req,res){
     res.sendFile(path.join(__dirname+'/pages/landing.html'));
   });
 
-  router.get('/login',function(req,res){
-    res.sendFile(path.join(__dirname+'/pages/add-complaint.html'));
+  router.get('/history',function(req,res){
+    res.sendFile(path.join(__dirname+'/pages/history.html'));
   });
   
   router.get('/add-complaint',function(req,res){
